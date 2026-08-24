@@ -278,7 +278,10 @@ export function VAF1_getVisibility(vaf1: VAF1, shapeIndex: number, animFrame: nu
 
     // animFrame can return a partial keyframe, but visibility information is frame-specific.
     // Resolve this by treating this as a stepped track, rounded. e.g. 15.9 is keyframe 16.
-    const animFrameInt = (animFrame + 0.5) | 0;
+    // const animFrameInt = (animFrame + 0.5) | 0;
+    // (noah) this is the only thing I could find doing half frames, seeing if making it 1 changes anything.
+
+    const animFrameInt = (animFrame + 1) | 0;
 
     if (animFrameInt < 0) {
         return bitmap.getBit(0);
