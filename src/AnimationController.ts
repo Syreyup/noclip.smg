@@ -5,7 +5,7 @@ export default class AnimationController {
     private timeInFrames: number = 0;
     public phaseFrames: number = 0;
 
-    constructor(public fps: number = 30) {}
+    constructor(public fps: number = 60) {}
 
     public getTimeInFrames(): number {
         return this.timeInFrames + this.phaseFrames;
